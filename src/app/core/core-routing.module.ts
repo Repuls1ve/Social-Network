@@ -11,9 +11,37 @@ const routes: Routes = [
     component: BaseLayoutComponent,
     children: [
       {
+        path: 'discover',
+        loadChildren: () =>
+          import('../discoveries/feature/discovery-shell/discovery-shell.module').then(
+            m => m.DiscoveryShellModule
+          )
+      },
+      {
+        path: 'contacts',
+        loadChildren: () =>
+          import('../contacts/feature/contact-shell/contact-shell.module').then(
+            m => m.ContactShellModule
+          )
+      },
+      {
         path: 'chats',
         loadChildren: () =>
           import('../chats/feature/chat-shell/chat-shell.module').then(m => m.ChatShellModule)
+      },
+      {
+        path: 'notifications',
+        loadChildren: () =>
+          import('../notifications/feature/notification-shell/notification-shell.module').then(
+            m => m.NotificationShellModule
+          )
+      },
+      {
+        path: 'settings',
+        loadChildren: () =>
+          import('../settings/feature/settings-shell/settings-shell.module').then(
+            m => m.SettingsShellModule
+          )
       }
     ]
   },

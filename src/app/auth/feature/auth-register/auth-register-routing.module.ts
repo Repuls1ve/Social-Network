@@ -5,8 +5,7 @@ import { AuthRegisterPageComponent } from './auth-register.page'
 const routes: Routes = [
   {
     path: '',
-    component: AuthRegisterPageComponent,
-    outlet: 'primary'
+    component: AuthRegisterPageComponent
   }
 ]
 
