@@ -1,0 +1,27 @@
+<div
+  *ngIf="vm$ | async as vm"
+  class="input-wrapper"
+  [class.floating-label]="vm.floatingLabel"
+  [class.clearable]="vm.clearable"
+>
+  <input
+    #input
+    class="input-native"
+    [class.has-value]="vm.hasValue"
+    (input)="onInput(input)"
+    (blur)="onTouch()"
+    [disabled]="vm.disabled"
+    [value]="vm.value"
+  />
+  <label class="input-label">
+    <ng-content></ng-content>
+  </label>
+  <button
+    *ngIf="vm.clearable && vm.hasValue"
+    type="button"
+    class="clear-button"
+    (click)="onClear(input)"
+  >
+    <svg-icon src="/assets/svg/close.svg" class="clear-icon"></svg-icon>
+  </button>
+</div>
