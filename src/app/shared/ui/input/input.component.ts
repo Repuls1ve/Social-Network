@@ -23,6 +23,11 @@ export class InputComponent implements ControlValueAccessor {
     this.inputStore.setFloatingLabel(value)
   }
 
+  @Input('type')
+  public set inputType(value: InputState['inputType']) {
+    this.inputStore.setInputType(value)
+  }
+
   constructor(private readonly inputStore: InputStore) {}
 
   public registerOnChange(onChange: InputState['onChange']): void {
