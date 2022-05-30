@@ -1,1 +1,8 @@
-auth register page works!
+<div class="register-page">
+  <form class="register-form" [formGroup]="registerForm">
+    <h1 class="heading">New account</h1>
+    <p class="description">We will not expose privacy without your consent</p>
+    <app-register-form></app-register-form>
+    <button appButton appearance="primary" size="lg" class="submit-button">Create account</button>
+  </form>
+</div>
