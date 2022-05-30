@@ -72,3 +72,11 @@ h3 {
   letter-spacing: -0.4px;
   text-transform: capitalize;
 }
+
+p {
+  margin: 0;
+  font-family: typography.$font-primary-02;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.24px;
+}

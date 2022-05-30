@@ -7,7 +7,7 @@ import { EmptyLayoutModule } from '@shared/ui/layouts/empty/empty-layout.module'
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'main',
     component: BaseLayoutComponent,
     children: [
       {
@@ -42,6 +42,11 @@ const routes: Routes = [
           import('../settings/feature/settings-shell/settings-shell.module').then(
             m => m.SettingsShellModule
           )
+      },
+      {
+        path: '**',
+        redirectTo: 'chats',
+        pathMatch: 'full'
       }
     ]
   },
@@ -53,12 +58,13 @@ const routes: Routes = [
         path: 'auth',
         loadChildren: () =>
           import('../auth/feature/auth-shell/auth-shell.module').then(m => m.AuthShellModule)
+      },
+      {
+        path: '**',
+        redirectTo: 'auth',
+        pathMatch: 'full'
       }
     ]
-  },
-  {
-    path: '**',
-    redirectTo: 'chats'
   }
 ]
 
