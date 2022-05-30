@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { ComponentStore } from '@ngrx/component-store'
 import { EMPTY_FUNCTION, EMPTY_STRING } from '@shared/constants/empty.constant'
+import { InputType, InputTypeT } from '@shared/enums/input-type.enum'
 import { map, Observable, tap } from 'rxjs'
 
 export interface InputState {
@@ -18,6 +19,11 @@ export interface InputState {
    * Shows a floating label inside text field
    */
   readonly floatingLabel: boolean
+
+  /**
+   * Type of the input
+   */
+  readonly inputType: InputTypeT
 
   /**
    * Current value of the input
@@ -42,6 +48,7 @@ export class InputStore extends ComponentStore<InputState> {
       clearable: false,
       disabled: false,
       floatingLabel: true,
+      inputType: InputType.Text,
       value: EMPTY_STRING,
       onChange: EMPTY_FUNCTION,
       onTouched: EMPTY_FUNCTION
@@ -61,6 +68,11 @@ export class InputStore extends ComponentStore<InputState> {
   public readonly setFloatingLabel = this.updater((state, value: InputState['floatingLabel']) => ({
     ...state,
     floatingLabel: value
+  }))
+
+  public readonly setInputType = this.updater((state, value: InputState['inputType']) => ({
+    ...state,
+    inputType: value
   }))
 
   public readonly setValue = this.updater((state, value: InputState['value']) => ({

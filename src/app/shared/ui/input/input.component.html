@@ -8,6 +8,7 @@
     #input
     class="input-native"
     [class.has-value]="vm.hasValue"
+    [type]="vm.inputType"
     (input)="onInput(input)"
     (blur)="onTouch()"
     [disabled]="vm.disabled"
