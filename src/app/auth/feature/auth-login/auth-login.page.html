@@ -1,1 +1,8 @@
-auth login page works!
+<div class="login-page">
+  <form class="login-form" [formGroup]="loginForm">
+    <h1 class="heading">Login your account</h1>
+    <p class="description">Remember that fields are case-sensitive</p>
+    <app-login-form></app-login-form>
+    <button appButton appearance="primary" size="lg" class="submit-button">Sign in</button>
+  </form>
+</div>
