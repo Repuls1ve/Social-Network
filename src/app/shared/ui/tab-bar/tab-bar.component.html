@@ -1,0 +1,9 @@
+<nav class="tabs">
+  <div class="tab">
+    <svg-icon src="/assets/svg/logo.svg"></svg-icon>
+  </div>
+  <a *ngFor="let tab of tabs" class="tab" [routerLink]="tab.link" routerLinkActive="active">
+    <svg-icon [src]="tab.default" class="icon-default"></svg-icon>
+    <svg-icon [src]="tab.active" class="icon-active"></svg-icon>
+  </a>
+</nav>

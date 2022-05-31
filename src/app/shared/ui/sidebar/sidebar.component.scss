@@ -1,45 +1,4 @@
-@use "colors";
-@use "mixins";
-
-.tabs {
-  width: 64px;
-  height: 100%;
-  background-color: colors.$base-02;
-
-  .tab {
-    position: relative;
-    width: 100%;
-    height: 56px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &.active::before {
-      @include mixins.center-top();
-
-      content: "";
-      left: 0;
-      width: 3px;
-      height: 90%;
-      background-color: colors.$primary-01;
-      border-top-right-radius: 6rem;
-      border-bottom-right-radius: 6rem;
-    }
-  }
-
-  .tab.active .icon-default {
-    display: none;
-  }
-
-  .tab:not(.active) .icon-active {
-    display: none;
-  }
-
-  svg-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-  }
+:host {
+  display: flex;
+  flex-direction: column;
 }
